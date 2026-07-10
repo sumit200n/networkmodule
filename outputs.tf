@@ -12,7 +12,7 @@ output "public_subnet_ids" {
 
 output "private_subnet_ids" {
   value = {
-    for k,v in aws_subnet.aws_subnet.sumit_pvt_mysubnet :
+    for k,v in aws_subnet.sumit_pvt_mysubnet :
     k => v.id
   }
 }
