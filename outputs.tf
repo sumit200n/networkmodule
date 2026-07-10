@@ -5,7 +5,7 @@ output "VPC_ID" {
 
 output "public_subnet_ids" {
   value = {
-    for k,v in aws_subnet.sumit_public_mysubnet
+    for k,v in aws_subnet.sumit_public_mysubnet :
     k => v.id
   }
 }
