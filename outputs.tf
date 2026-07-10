@@ -3,14 +3,16 @@ output "VPC_ID" {
   description = "VPC ID "
 }
 
-# output "VPC_ID_CIDR_FOR_SUBNET" {
+output "public_subnet_ids" {
+  value = {
+    for k,v in aws_subnet.var.public_subnets :
+    k => v.id
+  }
+}
 
-#   value = {
-
-
-#     for k, v in var.var_subnet_name :
-#     k => v.cidr
-
-#   }
-#   description = "VPC ID "
-# }
+output "private_subnet_ids" {
+  value = {
+    for k,v in aws_subnet.private_subnets :
+    k => v.id
+  }
+}
